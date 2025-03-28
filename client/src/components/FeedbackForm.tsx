@@ -67,15 +67,15 @@ export default function FeedbackForm() {
     <section id="feedback" className="py-12 mb-16">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">
-            Share Your <span className="text-primary">Feedback</span>
+          <h2 className="text-4xl font-bold mb-4 text-[#F2F0EB]">
+            Share Your <span className="text-primary font-black">Feedback</span>
           </h2>
-          <p className="text-lg text-gray-300">
+          <p className="text-lg text-[#D0CFC0] max-w-3xl mx-auto">
             We're constantly improving our server based on your input. Let us know about your experience, report issues, or suggest improvements.
           </p>
         </div>
         
-        <Card className="bg-dark-lighter border-gray-700">
+        <Card className="bg-[#222520] border border-[#5D6E4C] shadow-lg">
           <CardContent className="p-8">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -85,15 +85,15 @@ export default function FeedbackForm() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Name</FormLabel>
+                        <FormLabel className="text-[#F2F0EB] font-medium">Name</FormLabel>
                         <FormControl>
                           <Input 
                             placeholder="Your name" 
-                            className="bg-dark-darker border-gray-700 focus:ring-primary"
+                            className="bg-[#1A1D18] border-[#5D6E4C] focus:border-primary text-[#F2F0EB]"
                             {...field} 
                           />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-red-400" />
                       </FormItem>
                     )}
                   />
@@ -102,15 +102,15 @@ export default function FeedbackForm() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel className="text-[#F2F0EB] font-medium">Email</FormLabel>
                         <FormControl>
                           <Input 
                             placeholder="your@email.com" 
-                            className="bg-dark-darker border-gray-700 focus:ring-primary"
+                            className="bg-[#1A1D18] border-[#5D6E4C] focus:border-primary text-[#F2F0EB]"
                             {...field} 
                           />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-red-400" />
                       </FormItem>
                     )}
                   />
@@ -121,24 +121,24 @@ export default function FeedbackForm() {
                   name="category"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Feedback Category</FormLabel>
+                      <FormLabel className="text-[#F2F0EB] font-medium">Feedback Category</FormLabel>
                       <Select 
                         onValueChange={field.onChange} 
                         defaultValue={field.value}
                       >
                         <FormControl>
-                          <SelectTrigger className="bg-dark-darker border-gray-700 focus:ring-primary">
+                          <SelectTrigger className="bg-[#1A1D18] border-[#5D6E4C] focus:border-primary text-[#F2F0EB]">
                             <SelectValue placeholder="Select a category" />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent className="bg-dark-darker border-gray-700">
+                        <SelectContent className="bg-[#1A1D18] border-[#5D6E4C] text-[#F2F0EB]">
                           <SelectItem value="general">General Feedback</SelectItem>
                           <SelectItem value="performance">Performance Report</SelectItem>
                           <SelectItem value="bug">Bug Report</SelectItem>
                           <SelectItem value="suggestion">Suggestion</SelectItem>
                         </SelectContent>
                       </Select>
-                      <FormMessage />
+                      <FormMessage className="text-red-400" />
                     </FormItem>
                   )}
                 />
@@ -148,16 +148,16 @@ export default function FeedbackForm() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Your Feedback</FormLabel>
+                      <FormLabel className="text-[#F2F0EB] font-medium">Your Feedback</FormLabel>
                       <FormControl>
                         <Textarea 
                           placeholder="Please share your thoughts, experiences, or report any issues you've encountered..." 
-                          className="bg-dark-darker border-gray-700 focus:ring-primary"
+                          className="bg-[#1A1D18] border-[#5D6E4C] focus:border-primary text-[#F2F0EB]"
                           rows={5}
                           {...field} 
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-red-400" />
                     </FormItem>
                   )}
                 />
@@ -190,14 +190,14 @@ export default function FeedbackForm() {
         </Card>
         
         {showSuccess && (
-          <div className="mt-8 bg-secondary/10 border border-secondary rounded-lg p-6">
+          <div className="mt-8 bg-[#2B392B] border border-[#5D9E60] rounded-lg p-6 shadow-lg">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <Check className="h-8 w-8 text-secondary" />
+                <Check className="h-8 w-8 text-[#5D9E60]" />
               </div>
               <div className="ml-4">
-                <h4 className="text-xl font-bold text-secondary">Feedback Submitted Successfully!</h4>
-                <p className="text-gray-300 mt-1">Thank you for your input. We appreciate your contribution to making our server better!</p>
+                <h4 className="text-xl font-bold text-[#5D9E60]">Feedback Submitted Successfully!</h4>
+                <p className="text-[#D0CFC0] mt-1">Thank you for your input. We appreciate your contribution to making our server better!</p>
               </div>
             </div>
           </div>

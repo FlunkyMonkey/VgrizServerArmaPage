@@ -8,6 +8,26 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-[#2C2F29] text-[#E9E6DD];
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-[#F2F0EB] font-bold;
+  }
+  
+  a {
+    @apply text-[#B3C3A4] hover:text-primary transition-colors;
+  }
+  
+  .bg-dark-lighter {
+    @apply bg-[#373A33];
+  }
+  
+  .bg-dark-darker {
+    @apply bg-[#1E211B];
+  }
+  
+  .text-primary-light {
+    @apply text-[#9FBF8A];
   }
 }

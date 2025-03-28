@@ -6,10 +6,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const categoryColors = {
-  general: "bg-blue-500/20 text-blue-400",
-  performance: "bg-green-500/20 text-green-400",
-  bug: "bg-red-500/20 text-red-400",
-  suggestion: "bg-yellow-500/20 text-yellow-400"
+  general: "bg-blue-800 text-blue-200 border border-blue-400",
+  performance: "bg-green-800 text-green-200 border border-green-400",
+  bug: "bg-red-800 text-red-200 border border-red-400",
+  suggestion: "bg-amber-800 text-amber-200 border border-amber-400"
 };
 
 export const formatDate = (date: Date | string): string => {

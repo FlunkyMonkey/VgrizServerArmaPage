@@ -80,27 +80,27 @@ export default function ViewFeedback() {
   return (
     <div className="py-12 mb-16">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">
-          Community <span className="text-primary">Feedback</span>
+        <h2 className="text-4xl font-bold mb-4 text-[#F2F0EB]">
+          Community <span className="text-primary font-black">Feedback</span>
         </h2>
-        <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+        <p className="text-lg text-[#D0CFC0] max-w-3xl mx-auto">
           Check out what other players are saying about our server and the experiences they've shared.
         </p>
       </div>
       
-      <Card className="bg-dark-lighter border-gray-700 shadow-lg">
+      <Card className="bg-[#222520] border border-[#5D6E4C] shadow-lg">
         <CardContent className="p-6">
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-400">Filter by:</span>
+              <span className="text-sm text-[#D0CFC0] font-medium">Filter by:</span>
               <Select 
                 onValueChange={handleFilterChange} 
                 defaultValue="all"
               >
-                <SelectTrigger className="bg-dark-darker border-gray-700 w-auto">
+                <SelectTrigger className="bg-[#1A1D18] border-[#5D6E4C] focus:border-primary text-[#F2F0EB] w-auto">
                   <SelectValue placeholder="All Feedback" />
                 </SelectTrigger>
-                <SelectContent className="bg-dark-darker border-gray-700">
+                <SelectContent className="bg-[#1A1D18] border-[#5D6E4C] text-[#F2F0EB]">
                   <SelectItem value="all">All Feedback</SelectItem>
                   <SelectItem value="general">General</SelectItem>
                   <SelectItem value="performance">Performance</SelectItem>
@@ -114,25 +114,25 @@ export default function ViewFeedback() {
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-[#D0CFC0] hover:text-[#F2F0EB] transition-colors"
                   disabled={isLoading || !feedbacks || feedbacks.length === 0}
                 >
-                  <Trash2 className="h-4 w-4 mr-1" />
+                  <Trash2 className="h-4 w-4 mr-1 text-red-400" />
                   Clear All
                 </Button>
               </AlertDialogTrigger>
-              <AlertDialogContent className="bg-dark-lighter border-gray-700">
+              <AlertDialogContent className="bg-[#222520] border-[#5D6E4C]">
                 <AlertDialogHeader>
-                  <AlertDialogTitle>Clear All Feedback</AlertDialogTitle>
-                  <AlertDialogDescription>
+                  <AlertDialogTitle className="text-[#F2F0EB] text-xl">Clear All Feedback</AlertDialogTitle>
+                  <AlertDialogDescription className="text-[#D0CFC0]">
                     This will permanently delete all feedback submissions. This action cannot be undone.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                  <AlertDialogCancel className="bg-dark-darker border-gray-700 hover:bg-gray-700">Cancel</AlertDialogCancel>
+                  <AlertDialogCancel className="bg-[#1A1D18] border-[#5D6E4C] hover:bg-[#272B22] text-[#F2F0EB]">Cancel</AlertDialogCancel>
                   <AlertDialogAction
                     onClick={handleClearFeedback}
-                    className="bg-red-600 hover:bg-red-700"
+                    className="bg-red-600 hover:bg-red-700 text-white"
                   >
                     Delete All
                   </AlertDialogAction>
@@ -152,17 +152,17 @@ export default function ViewFeedback() {
             <>
               {(!feedbacks || feedbacks.length === 0 || filteredAndSortedFeedback.length === 0) ? (
                 <div className="py-12 text-center">
-                  <Inbox className="h-16 w-16 mx-auto text-gray-500 mb-4" />
-                  <p className="text-xl font-medium text-gray-400">No feedback submissions yet</p>
-                  <p className="mt-2 text-gray-500">Be the first to submit your thoughts about our server!</p>
+                  <Inbox className="h-16 w-16 mx-auto text-[#5D6E4C] mb-4" />
+                  <p className="text-xl font-medium text-[#F2F0EB]">No feedback submissions yet</p>
+                  <p className="mt-2 text-[#D0CFC0]">Be the first to submit your thoughts about our server!</p>
                 </div>
               ) : (
                 <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-700">
+                  <table className="min-w-full divide-y divide-[#5D6E4C]">
                     <thead>
-                      <tr>
+                      <tr className="bg-[#1A1D18]">
                         <th 
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider cursor-pointer"
+                          className="px-6 py-3 text-left text-xs font-medium text-[#D0CFC0] uppercase tracking-wider cursor-pointer"
                           onClick={() => handleSort("date")}
                         >
                           <div className="flex items-center">
@@ -174,7 +174,7 @@ export default function ViewFeedback() {
                           </div>
                         </th>
                         <th 
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider cursor-pointer"
+                          className="px-6 py-3 text-left text-xs font-medium text-[#D0CFC0] uppercase tracking-wider cursor-pointer"
                           onClick={() => handleSort("name")}
                         >
                           <div className="flex items-center">
@@ -185,21 +185,21 @@ export default function ViewFeedback() {
                             )}
                           </div>
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#D0CFC0] uppercase tracking-wider">
                           Category
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                        <th className="px-6 py-3 text-left text-xs font-medium text-[#D0CFC0] uppercase tracking-wider">
                           Feedback
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-700 bg-dark-lighter">
+                    <tbody className="divide-y divide-[#3A4333] bg-[#222520]">
                       {filteredAndSortedFeedback.map((item, index) => (
-                        <tr key={index} className="hover:bg-dark-darker transition-colors">
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+                        <tr key={index} className="hover:bg-[#1A1D18] transition-colors">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#D0CFC0]">
                             {formatDate(item.date)}
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-[#F2F0EB] font-medium">
                             {item.name}
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm">
@@ -207,7 +207,7 @@ export default function ViewFeedback() {
                               {getCategoryDisplayName(item.category)}
                             </span>
                           </td>
-                          <td className="px-6 py-4 text-sm text-gray-300">
+                          <td className="px-6 py-4 text-sm text-[#D0CFC0]">
                             <p className="line-clamp-2">{item.message}</p>
                           </td>
                         </tr>

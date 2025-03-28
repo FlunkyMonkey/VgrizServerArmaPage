@@ -4,8 +4,10 @@ import ServerSpecs from "@/components/ServerSpecs";
 import FeedbackForm from "@/components/FeedbackForm";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { isServerOnline, getRandomPlayerCount } from "@/lib/utils";
-import { AlertTriangle, Server, Zap } from "lucide-react";
+import { isServerOnline } from "@/lib/utils";
+import { Server } from "lucide-react";
+import armaRussiaImage from "@/assets/arma-russia.jpg";
+import armaUsImage from "@/assets/arma-us.jpg";
 
 export default function HomePage() {
   const [serverStatus, setServerStatus] = useState<{online: boolean; players: number}>({
@@ -26,11 +28,10 @@ export default function HomePage() {
   // Function to update server status (simulated)
   const updateServerStatus = () => {
     const online = isServerOnline();
-    const players = online ? getRandomPlayerCount() : 0;
     
     setServerStatus({
       online,
-      players
+      players: 0 // keep this for structure but we don't display it
     });
   };
 
@@ -53,37 +54,21 @@ export default function HomePage() {
               
               {/* Server Status */}
               <div className="flex flex-wrap items-center gap-4 mb-8">
-                <div className="bg-dark-lighter p-4 rounded-lg inline-flex items-center">
+                <div className="bg-[#222520] border border-[#5D6E4C] p-4 rounded-lg inline-flex items-center">
                   <div 
                     className={`w-4 h-4 rounded-full mr-3 ${serverStatus.online 
-                      ? "bg-secondary animate-pulse" 
+                      ? "bg-green-500 animate-pulse" 
                       : "bg-red-500"}`}
                   ></div>
-                  <span className="font-medium">Server Status: 
-                    <span className={serverStatus.online ? "text-secondary ml-1" : "text-red-500 ml-1"}>
+                  <span className="font-medium text-[#F2F0EB]">Server Status: 
+                    <span className={serverStatus.online ? "text-green-500 ml-1" : "text-red-500 ml-1"}>
                       {serverStatus.online ? "ONLINE" : "MAINTENANCE"}
-                    </span>
-                  </span>
-                </div>
-                <div className="bg-dark-lighter p-4 rounded-lg inline-flex items-center">
-                  <span className="font-medium">Players: 
-                    <span className="text-white ml-1">
-                      {serverStatus.players}/64
                     </span>
                   </span>
                 </div>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  className="bg-accent hover:bg-accent-dark text-white flex items-center justify-center" 
-                  asChild
-                >
-                  <a href="steam://connect/arma.vgriz.com">
-                    <Zap className="h-5 w-5 mr-2" />
-                    Connect Now
-                  </a>
-                </Button>
                 <Button 
                   variant="outline" 
                   className="border-primary text-primary hover:bg-primary hover:text-white flex items-center justify-center"
@@ -97,17 +82,26 @@ export default function HomePage() {
               </div>
             </div>
             <div className="order-first md:order-last mb-8 md:mb-0">
-              <div className="bg-dark-lighter p-2 rounded-lg shadow-lg">
-                <div className="aspect-w-16 aspect-h-9 bg-dark-darker rounded-lg overflow-hidden relative">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                    {/* ARMA Reforger illustration as fallback */}
-                    <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                      <div className="text-center px-4">
-                        <AlertTriangle className="h-16 w-16 text-gray-600 mx-auto mb-4" />
-                        <h3 className="text-xl font-bold text-gray-400">ARMA Reforger</h3>
-                        <p className="text-gray-500 mt-2">Gameplay Screenshot</p>
-                      </div>
-                    </div>
+              <div className="grid grid-cols-1 gap-4">
+                {/* Top image - US Army */}
+                <div className="bg-[#222520] p-2 rounded-lg shadow-lg border border-[#5D6E4C]">
+                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative">
+                    <img 
+                      src={armaUsImage} 
+                      alt="ARMA Reforger US Army" 
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+                
+                {/* Bottom image - Russian Forces */}
+                <div className="bg-[#222520] p-2 rounded-lg shadow-lg border border-[#5D6E4C]">
+                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative">
+                    <img 
+                      src={armaRussiaImage} 
+                      alt="ARMA Reforger Russian Forces" 
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                 </div>
               </div>
