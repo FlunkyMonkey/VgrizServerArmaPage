@@ -61,8 +61,11 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start mt-8">
             <div className="md:col-span-2">
-              <p className="text-lg text-[#D0CFC0] mb-8">
+              <p className="text-lg text-[#D0CFC0] mb-6">
                 Our server is powered by top-tier hardware and welcomes players of all experience levels. Jump in and experience ARMA Reforger at its best!
+              </p>
+              <p className="text-lg text-[#D0CFC0] mb-8">
+                With dedicated NVMe storage, 32GB of RAM, and gigabit internet connection, we provide a smooth gaming experience for both casual players and organized units.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -80,27 +83,14 @@ export default function HomePage() {
             </div>
             
             <div className="md:col-span-1">
-              <div className="grid grid-cols-1 gap-4">
-                {/* Top image - US Army */}
-                <div className="bg-[#222520] p-2 rounded-lg shadow-lg border border-[#5D6E4C]">
-                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative max-h-[150px]">
-                    <img 
-                      src={armaUsImage} 
-                      alt="ARMA Reforger US Army" 
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </div>
-                
-                {/* Bottom image - Russian Forces */}
-                <div className="bg-[#222520] p-2 rounded-lg shadow-lg border border-[#5D6E4C]">
-                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative max-h-[150px]">
-                    <img 
-                      src={armaRussiaImage} 
-                      alt="ARMA Reforger Russian Forces" 
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
+              {/* Single image - US Army */}
+              <div className="bg-[#222520] p-2 rounded-lg shadow-lg border border-[#5D6E4C] h-full">
+                <div className="rounded-lg overflow-hidden">
+                  <img 
+                    src={armaUsImage} 
+                    alt="ARMA Reforger US Army" 
+                    className="object-cover w-full"
+                  />
                 </div>
               </div>
             </div>
