@@ -18,7 +18,7 @@ export default function Footer() {
             </h2>
             <p className="text-[#D0CFC0]">
               ARMA Reforger Dedicated Server<br />
-              Connect at: <span className="text-primary">arma.vgriz.com</span>
+              Connect at: <span className="text-primary">arma.vgriz.com:2001</span>
             </p>
           </div>
           
