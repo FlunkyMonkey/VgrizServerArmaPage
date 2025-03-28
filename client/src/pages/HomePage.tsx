@@ -59,12 +59,12 @@ export default function HomePage() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center mt-8">
             <div className="md:col-span-2">
-              <p className="text-lg text-[#D0CFC0] mb-6">
+              <p className="text-lg text-[#D0CFC0] mb-6 text-center md:text-left">
                 Our server is powered by top-tier hardware and welcomes players of all experience levels. Jump in and experience ARMA Reforger at its best!
               </p>
-              <p className="text-lg text-[#D0CFC0] mb-8">
+              <p className="text-lg text-[#D0CFC0] mb-8 text-center md:text-left">
                 With dedicated NVMe storage, 32GB of RAM, and gigabit internet connection, we provide a smooth gaming experience for both casual players and organized units.
               </p>
               

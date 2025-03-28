@@ -74,6 +74,9 @@ export default function ServerSpecs() {
               <p className="text-[#D0CFC0] mb-4">
                 Our server is dedicated to creating a welcoming environment for all ARMA Reforger players. Whether you're a veteran or just getting started, you'll find a supportive community here.
               </p>
+              <div className="mb-4 p-3 bg-[#1A1D18] border border-[#5D6E4C] rounded-md">
+                <p className="text-lg font-semibold text-primary">Connect at: <span className="text-[#F2F0EB]">arma.vgriz.com:2001</span></p>
+              </div>
               <ul className="space-y-2 text-[#F2F0EB]">
                 <li className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary mr-2" viewBox="0 0 20 20" fill="currentColor">
