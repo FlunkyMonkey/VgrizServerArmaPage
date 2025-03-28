@@ -41,34 +41,31 @@ export default function HomePage() {
       
       <div className="container mx-auto px-4 py-8 flex-grow">
         {/* Hero Section */}
-        <section id="home" className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-                Welcome to <span className="text-primary">ARMA Reforger</span><br />
-                Dedicated Server
-              </h2>
-              <p className="text-lg text-gray-300 mb-8">
+        <section id="home" className="mb-16 pt-4">
+          <div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white text-center">
+              Welcome to <span className="text-primary">ARMA Reforger</span><br />
+              Dedicated Server
+            </h2>
+            
+            {/* Server Status - Centered */}
+            <div className="flex justify-center mb-8">
+              <div className="bg-[#222520] border border-[#5D6E4C] p-4 rounded-lg inline-flex items-center">
+                <div className="w-4 h-4 rounded-full mr-3 bg-green-500 animate-pulse"></div>
+                <span className="font-medium text-[#F2F0EB]">Server Status: 
+                  <span className="text-green-500 ml-1">ONLINE</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start mt-8">
+            <div className="md:col-span-2">
+              <p className="text-lg text-[#D0CFC0] mb-8">
                 Our server is powered by top-tier hardware and welcomes players of all experience levels. Jump in and experience ARMA Reforger at its best!
               </p>
               
-              {/* Server Status */}
-              <div className="flex flex-wrap items-center gap-4 mb-8">
-                <div className="bg-[#222520] border border-[#5D6E4C] p-4 rounded-lg inline-flex items-center">
-                  <div 
-                    className={`w-4 h-4 rounded-full mr-3 ${serverStatus.online 
-                      ? "bg-green-500 animate-pulse" 
-                      : "bg-red-500"}`}
-                  ></div>
-                  <span className="font-medium text-[#F2F0EB]">Server Status: 
-                    <span className={serverStatus.online ? "text-green-500 ml-1" : "text-red-500 ml-1"}>
-                      {serverStatus.online ? "ONLINE" : "MAINTENANCE"}
-                    </span>
-                  </span>
-                </div>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button 
                   variant="outline" 
                   className="border-primary text-primary hover:bg-primary hover:text-white flex items-center justify-center"
@@ -81,11 +78,12 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
-            <div className="order-first md:order-last mb-8 md:mb-0">
+            
+            <div className="md:col-span-1">
               <div className="grid grid-cols-1 gap-4">
                 {/* Top image - US Army */}
                 <div className="bg-[#222520] p-2 rounded-lg shadow-lg border border-[#5D6E4C]">
-                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative">
+                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative max-h-[150px]">
                     <img 
                       src={armaUsImage} 
                       alt="ARMA Reforger US Army" 
@@ -96,7 +94,7 @@ export default function HomePage() {
                 
                 {/* Bottom image - Russian Forces */}
                 <div className="bg-[#222520] p-2 rounded-lg shadow-lg border border-[#5D6E4C]">
-                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative">
+                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden relative max-h-[150px]">
                     <img 
                       src={armaRussiaImage} 
                       alt="ARMA Reforger Russian Forces" 

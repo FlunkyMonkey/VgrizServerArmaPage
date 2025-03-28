@@ -24,8 +24,8 @@ export const getCategoryDisplayName = (category: string): string => {
 };
 
 export const isServerOnline = (): boolean => {
-  // Simulating server status with 90% chance of being online
-  return Math.random() > 0.1;
+  // Always return true to show server as online
+  return true;
 };
 
 export const getRandomPlayerCount = (): number => {
